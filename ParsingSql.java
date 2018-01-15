@@ -124,11 +124,12 @@ public class ParsingSql {
     }
 
     public static String getType(String value) {
-            if (isIntValue(value)) {
-                return "number";
-            } else if (isDateValue(value)) {
+           
+            if (isDateValue(value)) {
                 return "date";
-            } else {
+            } else if (isIntValue(value)) {
+                return "number";
+            }  else {
                 return  "string";
             }
     }
@@ -146,7 +147,7 @@ public class ParsingSql {
     private static boolean isDateValue(String value) {
 
             if (value.contains("date")) return true;
-            if (value.contains("DATE")) return true;
+            if (value.contains("datetime")) return true;
 
             return false;
     }
