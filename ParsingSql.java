@@ -43,6 +43,7 @@ public class ParsingSql {
                     int pos = file.getName().lastIndexOf('.');
                     String modelName = file.getName().substring(0, pos);
                     modelName = modelName.replaceAll("toptoon_", "");
+                    modelName = modelName.replaceAll("_", "-");
                     modeltext = getHeaderText(modelName);
                     modeltext += addLeftEmptyString("\"" + "properties" + "\": {" , 2);
                     BufferedReader reader = null;
