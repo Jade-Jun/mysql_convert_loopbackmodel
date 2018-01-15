@@ -125,8 +125,9 @@ public class ParsingSql {
 
     public static String getType(String value) {
            
+            // date type도 number로 처리
             if (isDateValue(value)) {
-                return "date";
+                return "number";
             } else if (isIntValue(value)) {
                 return "number";
             }  else {
