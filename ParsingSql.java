@@ -43,7 +43,6 @@ public class ParsingSql {
                     int pos = file.getName().lastIndexOf('.');
                     String modelName = file.getName().substring(0, pos);
                     modelName = modelName.replaceAll("toptoon_", "");
-                    modelName = modelName.replaceAll("_", "-");
                     modeltext = getHeaderText(modelName);
                     modeltext += addLeftEmptyString("\"" + "properties" + "\": {" , 2);
                     BufferedReader reader = null;
@@ -96,6 +95,7 @@ public class ParsingSql {
                     int pos = file.getName().lastIndexOf('.');
                     String filePath = dir.getName() + "/" + file.getName().substring(0, pos) + ".json";
                     filePath = filePath.replaceAll("toptoon_", "");
+                    filePath = filePath.replaceAll("_", "-");
                     BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
                     out.write(modeltext);
                     out.close();
