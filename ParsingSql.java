@@ -61,7 +61,7 @@ public class ParsingSql {
                         // model 정보 추출
                         if (isTableSchema) {
                             line = line.trim();
-                            if (line.startsWith("PRIMARY KEY")) {
+                            if (line.startsWith("PRIMARY KEY") || line.startsWith("UNIQUE")) {
                                 System.out.println("file read end");
                                 break;
                             }
